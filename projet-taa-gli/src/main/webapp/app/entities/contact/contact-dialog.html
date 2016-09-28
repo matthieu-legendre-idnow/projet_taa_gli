@@ -1,0 +1,100 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myContactLabel">Create or edit a Contact</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.contact.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.contact.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactId">Contact Id</label>
+            <input type="number" class="form-control" name="contactId" id="field_contactId"
+                    ng-model="vm.contact.contactId"
+                    required />
+            <div ng-show="editForm.contactId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.contactId.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.contactId.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactNom">Contact Nom</label>
+            <input type="text" class="form-control" name="contactNom" id="field_contactNom"
+                    ng-model="vm.contact.contactNom"
+                    required />
+            <div ng-show="editForm.contactNom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.contactNom.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactRole">Contact Role</label>
+            <input type="text" class="form-control" name="contactRole" id="field_contactRole"
+                    ng-model="vm.contact.contactRole"
+                    required />
+            <div ng-show="editForm.contactRole.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.contactRole.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactSexe">Contact Sexe</label>
+            <input type="text" class="form-control" name="contactSexe" id="field_contactSexe"
+                    ng-model="vm.contact.contactSexe"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactTel">Contact Tel</label>
+            <input type="text" class="form-control" name="contactTel" id="field_contactTel"
+                    ng-model="vm.contact.contactTel"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactMail">Contact Mail</label>
+            <input type="text" class="form-control" name="contactMail" id="field_contactMail"
+                    ng-model="vm.contact.contactMail"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_contactDateMaj">Contact Date Maj</label>
+                <div class="input-group">
+                    <input id="field_contactDateMaj" type="text" class="form-control" name="contactDateMaj" datetime-picker="{{dateformat}}" ng-model="vm.contact.contactDateMaj" is-open="vm.datePickerOpenStatus.contactDateMaj"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('contactDateMaj')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_contact">Contact</label>
+            <select class="form-control" id="field_contact" name="contact" ng-model="vm.contact.contact" ng-options="partenaire as partenaire.id for partenaire in vm.contacts | orderBy:'id' track by partenaire.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

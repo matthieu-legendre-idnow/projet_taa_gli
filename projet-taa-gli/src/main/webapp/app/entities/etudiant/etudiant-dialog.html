@@ -1,0 +1,136 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEtudiantLabel">Create or edit a Etudiant</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.etudiant.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.etudiant.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuId">Etu Id</label>
+            <input type="text" class="form-control" name="etuId" id="field_etuId"
+                    ng-model="vm.etudiant.etuId"
+                    required />
+            <div ng-show="editForm.etuId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etuId.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuNom">Etu Nom</label>
+            <input type="text" class="form-control" name="etuNom" id="field_etuNom"
+                    ng-model="vm.etudiant.etuNom"
+                    required />
+            <div ng-show="editForm.etuNom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etuNom.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuPrenom">Etu Prenom</label>
+            <input type="text" class="form-control" name="etuPrenom" id="field_etuPrenom"
+                    ng-model="vm.etudiant.etuPrenom"
+                    required />
+            <div ng-show="editForm.etuPrenom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etuPrenom.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuRue">Etu Rue</label>
+            <input type="text" class="form-control" name="etuRue" id="field_etuRue"
+                    ng-model="vm.etudiant.etuRue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuVille">Etu Ville</label>
+            <input type="text" class="form-control" name="etuVille" id="field_etuVille"
+                    ng-model="vm.etudiant.etuVille"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuCodeDep">Etu Code Dep</label>
+            <input type="text" class="form-control" name="etuCodeDep" id="field_etuCodeDep"
+                    ng-model="vm.etudiant.etuCodeDep"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuTelPerso">Etu Tel Perso</label>
+            <input type="text" class="form-control" name="etuTelPerso" id="field_etuTelPerso"
+                    ng-model="vm.etudiant.etuTelPerso"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuTelMob">Etu Tel Mob</label>
+            <input type="text" class="form-control" name="etuTelMob" id="field_etuTelMob"
+                    ng-model="vm.etudiant.etuTelMob"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuPremierEmploi">Etu Premier Emploi</label>
+            <input type="text" class="form-control" name="etuPremierEmploi" id="field_etuPremierEmploi"
+                    ng-model="vm.etudiant.etuPremierEmploi"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuDernierEmploi">Etu Dernier Emploi</label>
+            <input type="text" class="form-control" name="etuDernierEmploi" id="field_etuDernierEmploi"
+                    ng-model="vm.etudiant.etuDernierEmploi"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuRechEmp">Etu Rech Emp</label>
+            <input type="checkbox" class="form-control" name="etuRechEmp" id="field_etuRechEmp"
+                    ng-model="vm.etudiant.etuRechEmp"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuDateMaj">Etu Date Maj</label>
+                <div class="input-group">
+                    <input id="field_etuDateMaj" type="text" class="form-control" name="etuDateMaj" datetime-picker="{{dateformat}}" ng-model="vm.etudiant.etuDateMaj" is-open="vm.datePickerOpenStatus.etuDateMaj"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('etuDateMaj')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.etuDateMaj.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etuDateMaj.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.etuDateMaj.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_stagiaire">Stagiaire</label>
+            <select class="form-control" id="field_stagiaire" name="stagiaire" ng-model="vm.etudiant.stagiaire" ng-options="partenaire as partenaire.id for partenaire in vm.stagiaires | orderBy:'id' track by partenaire.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

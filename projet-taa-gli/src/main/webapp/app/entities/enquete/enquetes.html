@@ -1,0 +1,90 @@
+<div>
+    <h2>Enquetes</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="enquete.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Enquete
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Enq Id</span></th>
+                    <th><span>Mode Enquete</span></th>
+                    <th><span>Date Enquete</span></th>
+                    <th><span>Etu Nom</span></th>
+                    <th><span>Etu Rue</span></th>
+                    <th><span>Etu Ville</span></th>
+                    <th><span>Etu Code Dep</span></th>
+                    <th><span>Enq Date Debut</span></th>
+                    <th><span>Enq Duree Recherche</span></th>
+                    <th><span>Enq Quantite</span></th>
+                    <th><span>Enq Question</span></th>
+                    <th><span>Enq Reponse</span></th>
+                    <th><span>Enq Salaire</span></th>
+                    <th><span>Enq Salaire Devise</span></th>
+                    <th><span>Enquete</span></th>
+                    <th><span>Stage</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enquete in vm.enquetes track by enquete.id">
+                    <td><a ui-sref="enquete-detail({id:enquete.id})">{{enquete.id}}</a></td>
+                    <td>{{enquete.enqId}}</td>
+                    <td>{{enquete.modeEnquete}}</td>
+                    <td>{{enquete.dateEnquete | date:'medium'}}</td>
+                    <td>{{enquete.etuNom}}</td>
+                    <td>{{enquete.etuRue}}</td>
+                    <td>{{enquete.etuVille}}</td>
+                    <td>{{enquete.etuCodeDep}}</td>
+                    <td>{{enquete.enqDateDebut | date:'medium'}}</td>
+                    <td>{{enquete.enqDureeRecherche}}</td>
+                    <td>{{enquete.enqQuantite}}</td>
+                    <td>{{enquete.enqQuestion}}</td>
+                    <td>{{enquete.enqReponse}}</td>
+                    <td>{{enquete.enqSalaire}}</td>
+                    <td>{{enquete.enqSalaireDevise}}</td>
+                    <td>
+                        <a ui-sref="etudiant-detail({id:enquete.enquete.id})">{{enquete.enquete.id}}</a>
+                    </td>
+                    <td>
+                        <a ui-sref="stage-detail({id:enquete.stage.id})">{{enquete.stage.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="enquete-detail({id:enquete.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enquete.edit({id:enquete.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enquete.delete({id:enquete.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

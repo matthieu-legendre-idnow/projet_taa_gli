@@ -1,0 +1,192 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myStageLabel">Create or edit a Stage</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.stage.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.stage.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dateDebut">Date Debut</label>
+                <div class="input-group">
+                    <input id="field_dateDebut" type="text" class="form-control" name="dateDebut" datetime-picker="{{dateformat}}" ng-model="vm.stage.dateDebut" is-open="vm.datePickerOpenStatus.dateDebut"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateDebut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateDebut.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateDebut.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateDebut.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pIdent">P Ident</label>
+            <input type="number" class="form-control" name="pIdent" id="field_pIdent"
+                    ng-model="vm.stage.pIdent"
+                    required />
+            <div ng-show="editForm.pIdent.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pIdent.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pIdent.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pIdentConvention">P Ident Convention</label>
+            <input type="number" class="form-control" name="pIdentConvention" id="field_pIdentConvention"
+                    ng-model="vm.stage.pIdentConvention"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuIdent">Etu Ident</label>
+            <input type="number" class="form-control" name="etuIdent" id="field_etuIdent"
+                    ng-model="vm.stage.etuIdent"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enseignId">Enseign Id</label>
+            <input type="number" class="form-control" name="enseignId" id="field_enseignId"
+                    ng-model="vm.stage.enseignId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_encId">Enc Id</label>
+            <input type="number" class="form-control" name="encId" id="field_encId"
+                    ng-model="vm.stage.encId"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_nomEnc">Nom Enc</label>
+            <input type="text" class="form-control" name="nomEnc" id="field_nomEnc"
+                    ng-model="vm.stage.nomEnc"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_sujet">Sujet</label>
+            <input type="text" class="form-control" name="sujet" id="field_sujet"
+                    ng-model="vm.stage.sujet"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_lang">Lang</label>
+            <input type="text" class="form-control" name="lang" id="field_lang"
+                    ng-model="vm.stage.lang"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_motscles">Motscles</label>
+            <input type="text" class="form-control" name="motscles" id="field_motscles"
+                    ng-model="vm.stage.motscles"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_joursTravaille">Jours Travaille</label>
+            <input type="number" class="form-control" name="joursTravaille" id="field_joursTravaille"
+                    ng-model="vm.stage.joursTravaille"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_salaire">Salaire</label>
+            <input type="number" class="form-control" name="salaire" id="field_salaire"
+                    ng-model="vm.stage.salaire"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_finConv">Fin Conv</label>
+                <div class="input-group">
+                    <input id="field_finConv" type="text" class="form-control" name="finConv" datetime-picker="{{dateformat}}" ng-model="vm.stage.finConv" is-open="vm.datePickerOpenStatus.finConv"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('finConv')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_finStage">Fin Stage</label>
+                <div class="input-group">
+                    <input id="field_finStage" type="text" class="form-control" name="finStage" datetime-picker="{{dateformat}}" ng-model="vm.stage.finStage" is-open="vm.datePickerOpenStatus.finStage"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('finStage')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_soutenance">Soutenance</label>
+                <div class="input-group">
+                    <input id="field_soutenance" type="text" class="form-control" name="soutenance" datetime-picker="{{dateformat}}" ng-model="vm.stage.soutenance" is-open="vm.datePickerOpenStatus.soutenance"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('soutenance')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_rapport">Rapport</label>
+                <div class="input-group">
+                    <input id="field_rapport" type="text" class="form-control" name="rapport" datetime-picker="{{dateformat}}" ng-model="vm.stage.rapport" is-open="vm.datePickerOpenStatus.rapport"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('rapport')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+
+        <div class="form-group">
+            <label for="field_referent">Referent</label>
+            <select class="form-control" id="field_referent" name="referent" ng-model="vm.stage.referent" ng-options="enseignant as enseignant.id for enseignant in vm.referents | orderBy:'id' track by enseignant.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_contact1">Contact 1</label>
+            <select class="form-control" id="field_contact1" name="contact1" ng-model="vm.stage.contact1" ng-options="contact as contact.id for contact in vm.contact1s | orderBy:'id' track by contact.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_contact2">Contact 2</label>
+            <select class="form-control" id="field_contact2" name="contact2" ng-model="vm.stage.contact2" ng-options="contact as contact.id for contact in vm.contact2s | orderBy:'id' track by contact.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_etudiant">Etudiant</label>
+            <select class="form-control" id="field_etudiant" name="etudiant" ng-model="vm.stage.etudiant" ng-options="etudiant as etudiant.id for etudiant in vm.etudiants | orderBy:'id' track by etudiant.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_entreprise">Entreprise</label>
+            <select class="form-control" id="field_entreprise" name="entreprise" ng-model="vm.stage.entreprise" ng-options="partenaire as partenaire.id for partenaire in vm.partenaires track by partenaire.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

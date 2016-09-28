@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+
+    <property name="now" value="now()" dbms="mysql,h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+    <property name="now" value="sysdate" dbms="oracle"/>
+
+    <property name="autoIncrement" value="true" dbms="mysql,h2,postgresql,oracle"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle"/>
+
+    <!--
+        Added the entity Partenaire.
+    -->
+    <changeSet id="20160928130403-1" author="jhipster">
+        <createTable tableName="partenaire">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="p_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="p_num" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="p_siret" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_service" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_region" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="p_code_activity" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="p_rue" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_cplt_rue" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_code_dep" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="p_ville" type="varchar(255)">
+                <constraints nullable="false" />
+            </column>
+            
+            <column name="p_tel_std" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_url" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_commentaire" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_nom_signataire" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_effectif" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            
+            <column name="p_date_maj" type="timestamp">
+                <constraints nullable="false" />
+            </column>
+            
+            <!-- jhipster-needle-liquibase-add-column - Jhipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="partenaire" columnName="p_date_maj" columnDataType="datetime"/>
+        
+    </changeSet>
+</databaseChangeLog>

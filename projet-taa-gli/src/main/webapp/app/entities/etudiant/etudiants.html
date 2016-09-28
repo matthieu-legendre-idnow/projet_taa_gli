@@ -1,0 +1,82 @@
+<div>
+    <h2>Etudiants</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="etudiant.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Etudiant
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Etu Id</span></th>
+                    <th><span>Etu Nom</span></th>
+                    <th><span>Etu Prenom</span></th>
+                    <th><span>Etu Rue</span></th>
+                    <th><span>Etu Ville</span></th>
+                    <th><span>Etu Code Dep</span></th>
+                    <th><span>Etu Tel Perso</span></th>
+                    <th><span>Etu Tel Mob</span></th>
+                    <th><span>Etu Premier Emploi</span></th>
+                    <th><span>Etu Dernier Emploi</span></th>
+                    <th><span>Etu Rech Emp</span></th>
+                    <th><span>Etu Date Maj</span></th>
+                    <th><span>Stagiaire</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="etudiant in vm.etudiants track by etudiant.id">
+                    <td><a ui-sref="etudiant-detail({id:etudiant.id})">{{etudiant.id}}</a></td>
+                    <td>{{etudiant.etuId}}</td>
+                    <td>{{etudiant.etuNom}}</td>
+                    <td>{{etudiant.etuPrenom}}</td>
+                    <td>{{etudiant.etuRue}}</td>
+                    <td>{{etudiant.etuVille}}</td>
+                    <td>{{etudiant.etuCodeDep}}</td>
+                    <td>{{etudiant.etuTelPerso}}</td>
+                    <td>{{etudiant.etuTelMob}}</td>
+                    <td>{{etudiant.etuPremierEmploi}}</td>
+                    <td>{{etudiant.etuDernierEmploi}}</td>
+                    <td>{{etudiant.etuRechEmp}}</td>
+                    <td>{{etudiant.etuDateMaj | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="partenaire-detail({id:etudiant.stagiaire.id})">{{etudiant.stagiaire.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="etudiant-detail({id:etudiant.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="etudiant.edit({id:etudiant.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="etudiant.delete({id:etudiant.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

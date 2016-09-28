@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span>Partenaire</span> {{vm.partenaire.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>P Id</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pId}}</span>
+        </dd>
+        <dt><span>P Num</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pNum}}</span>
+        </dd>
+        <dt><span>P Siret</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pSiret}}</span>
+        </dd>
+        <dt><span>P Service</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pService}}</span>
+        </dd>
+        <dt><span>P Region</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pRegion}}</span>
+        </dd>
+        <dt><span>P Code Activity</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pCodeActivity}}</span>
+        </dd>
+        <dt><span>P Rue</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pRue}}</span>
+        </dd>
+        <dt><span>P Cplt Rue</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pCpltRue}}</span>
+        </dd>
+        <dt><span>P Code Dep</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pCodeDep}}</span>
+        </dd>
+        <dt><span>P Ville</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pVille}}</span>
+        </dd>
+        <dt><span>P Tel Std</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pTelStd}}</span>
+        </dd>
+        <dt><span>P Url</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pUrl}}</span>
+        </dd>
+        <dt><span>P Commentaire</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pCommentaire}}</span>
+        </dd>
+        <dt><span>P Nom Signataire</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pNomSignataire}}</span>
+        </dd>
+        <dt><span>P Effectif</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pEffectif}}</span>
+        </dd>
+        <dt><span>P Date Maj</span></dt>
+        <dd>
+            <span>{{vm.partenaire.pDateMaj | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="partenaire-detail.edit({id:vm.partenaire.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

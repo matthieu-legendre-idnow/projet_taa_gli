@@ -1,0 +1,176 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myPartenaireLabel">Create or edit a Partenaire</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.partenaire.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.partenaire.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pId">P Id</label>
+            <input type="number" class="form-control" name="pId" id="field_pId"
+                    ng-model="vm.partenaire.pId"
+                    required />
+            <div ng-show="editForm.pId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pId.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pId.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pNum">P Num</label>
+            <input type="text" class="form-control" name="pNum" id="field_pNum"
+                    ng-model="vm.partenaire.pNum"
+                    required />
+            <div ng-show="editForm.pNum.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pNum.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pSiret">P Siret</label>
+            <input type="text" class="form-control" name="pSiret" id="field_pSiret"
+                    ng-model="vm.partenaire.pSiret"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pService">P Service</label>
+            <input type="text" class="form-control" name="pService" id="field_pService"
+                    ng-model="vm.partenaire.pService"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pRegion">P Region</label>
+            <input type="text" class="form-control" name="pRegion" id="field_pRegion"
+                    ng-model="vm.partenaire.pRegion"
+                    required />
+            <div ng-show="editForm.pRegion.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pRegion.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pCodeActivity">P Code Activity</label>
+            <input type="text" class="form-control" name="pCodeActivity" id="field_pCodeActivity"
+                    ng-model="vm.partenaire.pCodeActivity"
+                    required />
+            <div ng-show="editForm.pCodeActivity.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pCodeActivity.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pRue">P Rue</label>
+            <input type="text" class="form-control" name="pRue" id="field_pRue"
+                    ng-model="vm.partenaire.pRue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pCpltRue">P Cplt Rue</label>
+            <input type="text" class="form-control" name="pCpltRue" id="field_pCpltRue"
+                    ng-model="vm.partenaire.pCpltRue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pCodeDep">P Code Dep</label>
+            <input type="text" class="form-control" name="pCodeDep" id="field_pCodeDep"
+                    ng-model="vm.partenaire.pCodeDep"
+                    required />
+            <div ng-show="editForm.pCodeDep.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pCodeDep.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pVille">P Ville</label>
+            <input type="text" class="form-control" name="pVille" id="field_pVille"
+                    ng-model="vm.partenaire.pVille"
+                    required />
+            <div ng-show="editForm.pVille.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pVille.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pTelStd">P Tel Std</label>
+            <input type="text" class="form-control" name="pTelStd" id="field_pTelStd"
+                    ng-model="vm.partenaire.pTelStd"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pUrl">P Url</label>
+            <input type="text" class="form-control" name="pUrl" id="field_pUrl"
+                    ng-model="vm.partenaire.pUrl"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pCommentaire">P Commentaire</label>
+            <input type="text" class="form-control" name="pCommentaire" id="field_pCommentaire"
+                    ng-model="vm.partenaire.pCommentaire"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pNomSignataire">P Nom Signataire</label>
+            <input type="text" class="form-control" name="pNomSignataire" id="field_pNomSignataire"
+                    ng-model="vm.partenaire.pNomSignataire"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pEffectif">P Effectif</label>
+            <input type="text" class="form-control" name="pEffectif" id="field_pEffectif"
+                    ng-model="vm.partenaire.pEffectif"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_pDateMaj">P Date Maj</label>
+                <div class="input-group">
+                    <input id="field_pDateMaj" type="text" class="form-control" name="pDateMaj" datetime-picker="{{dateformat}}" ng-model="vm.partenaire.pDateMaj" is-open="vm.datePickerOpenStatus.pDateMaj"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('pDateMaj')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.pDateMaj.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.pDateMaj.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.pDateMaj.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

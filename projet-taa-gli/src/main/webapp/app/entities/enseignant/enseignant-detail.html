@@ -1,0 +1,55 @@
+
+<div>
+    <h2><span>Enseignant</span> {{vm.enseignant.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Enseignant Id</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantId}}</span>
+        </dd>
+        <dt><span>Enseignant Sesame</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantSesame}}</span>
+        </dd>
+        <dt><span>Enseignant Sexe</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantSexe}}</span>
+        </dd>
+        <dt><span>Enseignant Nom</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantNom}}</span>
+        </dd>
+        <dt><span>Enseignant Prenom</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantPrenom}}</span>
+        </dd>
+        <dt><span>Enseignant Adresse</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantAdresse}}</span>
+        </dd>
+        <dt><span>Enseignant Tel Pro</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantTelPro}}</span>
+        </dd>
+        <dt><span>Enseignant Actif</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantActif}}</span>
+        </dd>
+        <dt><span>Enseignant Maj</span></dt>
+        <dd>
+            <span>{{vm.enseignant.enseignantMaj | date:'medium'}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="enseignant-detail.edit({id:vm.enseignant.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

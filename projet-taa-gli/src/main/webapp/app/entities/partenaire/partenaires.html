@@ -1,0 +1,86 @@
+<div>
+    <h2>Partenaires</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="partenaire.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Partenaire
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>P Id</span></th>
+                    <th><span>P Num</span></th>
+                    <th><span>P Siret</span></th>
+                    <th><span>P Service</span></th>
+                    <th><span>P Region</span></th>
+                    <th><span>P Code Activity</span></th>
+                    <th><span>P Rue</span></th>
+                    <th><span>P Cplt Rue</span></th>
+                    <th><span>P Code Dep</span></th>
+                    <th><span>P Ville</span></th>
+                    <th><span>P Tel Std</span></th>
+                    <th><span>P Url</span></th>
+                    <th><span>P Commentaire</span></th>
+                    <th><span>P Nom Signataire</span></th>
+                    <th><span>P Effectif</span></th>
+                    <th><span>P Date Maj</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="partenaire in vm.partenaires track by partenaire.id">
+                    <td><a ui-sref="partenaire-detail({id:partenaire.id})">{{partenaire.id}}</a></td>
+                    <td>{{partenaire.pId}}</td>
+                    <td>{{partenaire.pNum}}</td>
+                    <td>{{partenaire.pSiret}}</td>
+                    <td>{{partenaire.pService}}</td>
+                    <td>{{partenaire.pRegion}}</td>
+                    <td>{{partenaire.pCodeActivity}}</td>
+                    <td>{{partenaire.pRue}}</td>
+                    <td>{{partenaire.pCpltRue}}</td>
+                    <td>{{partenaire.pCodeDep}}</td>
+                    <td>{{partenaire.pVille}}</td>
+                    <td>{{partenaire.pTelStd}}</td>
+                    <td>{{partenaire.pUrl}}</td>
+                    <td>{{partenaire.pCommentaire}}</td>
+                    <td>{{partenaire.pNomSignataire}}</td>
+                    <td>{{partenaire.pEffectif}}</td>
+                    <td>{{partenaire.pDateMaj | date:'medium'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="partenaire-detail({id:partenaire.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="partenaire.edit({id:partenaire.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="partenaire.delete({id:partenaire.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

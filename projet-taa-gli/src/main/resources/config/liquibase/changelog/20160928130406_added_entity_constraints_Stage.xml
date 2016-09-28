@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
+    <!--
+        Added the constraints for entity Stage.
+    -->
+    <changeSet id="20160928130406-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="referent_id"
+                                 baseTableName="stage"
+                                 constraintName="fk_stage_referent_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="enseignant"/>
+
+        <addForeignKeyConstraint baseColumnNames="contact_1_id"
+                                 baseTableName="stage"
+                                 constraintName="fk_stage_contact_1_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact"/>
+
+        <addForeignKeyConstraint baseColumnNames="contact_2_id"
+                                 baseTableName="stage"
+                                 constraintName="fk_stage_contact_2_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="contact"/>
+
+        <addForeignKeyConstraint baseColumnNames="etudiant_id"
+                                 baseTableName="stage"
+                                 constraintName="fk_stage_etudiant_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="etudiant"/>
+
+        <addForeignKeyConstraint baseColumnNames="entreprise_id"
+                                 baseTableName="stage"
+                                 constraintName="fk_stage_entreprise_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="partenaire"/>
+
+    </changeSet>
+</databaseChangeLog>

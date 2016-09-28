@@ -1,0 +1,115 @@
+entity Contact {
+	contactID Long required,
+    /**
+     * Lien avec un partenaire 
+     */
+     contactNom String required,
+     contactRole String required,
+     contactSexe String,
+     contactTel String,
+     contactMail String,
+     contactDateMaj ZonedDateTime
+}
+
+entity Enseignant{
+	enseignantID Long required,
+    enseignantSesame String required,
+    enseignantSexe String,
+    enseignantNom String required,
+    enseignantPrenom String required,
+    enseignantAdresse String,
+    enseignantTelPro String,
+    enseignantActif Boolean required,
+    enseignantMaj ZonedDateTime
+}
+
+entity Partenaire {
+	pId Long required,
+    pNum String required,
+    pSiret String,
+    pService String,
+    pRegion String required,
+    pCodeActivity String required,
+    pRue String,
+    pCpltRue String,
+    pCodeDep String required,
+    pVille String required,
+    pTelStd String,
+    pUrl String,
+    pCommentaire String,
+    pNomSignataire String,
+    pEffectif String,
+    pDateMaj ZonedDateTime required,       
+    
+}
+
+entity Enquete{
+	enqId Long required,
+    modeEnquete String,
+    dateEnquete ZonedDateTime required,
+    etuNom String required,
+    etuRue String,
+    etuVille String,
+    etuCodeDep String,
+    enqDateDebut ZonedDateTime required,
+    enqDureeRecherche String,
+    enqQuantite Long,
+    enqQuestion String,
+    enqReponse String,
+    enqSalaire Long,
+    enqSalaireDevise String,
+}
+
+entity Etudiant{
+	etuId String required,
+    etuNom String required,
+    etuPrenom String required,
+    etuRue String,
+    etuVille String,
+    etuCodeDep String,
+    etuTelPerso String,
+    etuTelMob String
+    etuPremierEmploi String,
+    etuDernierEmploi String,
+    etuRechEmp Boolean,
+    etuDateMaj ZonedDateTime required
+}
+
+entity Stage { dateDebut ZonedDateTime required, pIdent Long required, pIdentConvention Long, etuIdent Long, enseignId Long, encId Long, nomEnc String, sujet String, lang String, motscles String, joursTravaille Long, salaire Long, finConv ZonedDateTime, finStage ZonedDateTime, soutenance ZonedDateTime, rapport ZonedDateTime, }
+
+relationship OneToOne {
+	Contact{contact} to Partenaire
+}
+
+relationship OneToOne {
+	Stage{referent} to Enseignant
+}
+
+relationship OneToOne {
+	Stage{contact1} to Contact
+}
+
+
+relationship OneToOne {
+	Stage{contact2} to Contact
+}
+
+relationship OneToOne{
+	Stage{etudiant} to Etudiant
+}
+
+relationship ManyToOne{
+	Stage{entreprise} to Partenaire
+}
+
+relationship OneToOne{
+	Etudiant{stagiaire} to Partenaire
+}
+
+relationship OneToOne{
+	Enquete{enquete} to Etudiant
+}
+
+relationship OneToOne{
+	Enquete{stage} to Stage
+}

@@ -1,0 +1,83 @@
+
+<div>
+    <h2><span>Enquete</span> {{vm.enquete.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Enq Id</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqId}}</span>
+        </dd>
+        <dt><span>Mode Enquete</span></dt>
+        <dd>
+            <span>{{vm.enquete.modeEnquete}}</span>
+        </dd>
+        <dt><span>Date Enquete</span></dt>
+        <dd>
+            <span>{{vm.enquete.dateEnquete | date:'medium'}}</span>
+        </dd>
+        <dt><span>Etu Nom</span></dt>
+        <dd>
+            <span>{{vm.enquete.etuNom}}</span>
+        </dd>
+        <dt><span>Etu Rue</span></dt>
+        <dd>
+            <span>{{vm.enquete.etuRue}}</span>
+        </dd>
+        <dt><span>Etu Ville</span></dt>
+        <dd>
+            <span>{{vm.enquete.etuVille}}</span>
+        </dd>
+        <dt><span>Etu Code Dep</span></dt>
+        <dd>
+            <span>{{vm.enquete.etuCodeDep}}</span>
+        </dd>
+        <dt><span>Enq Date Debut</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqDateDebut | date:'medium'}}</span>
+        </dd>
+        <dt><span>Enq Duree Recherche</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqDureeRecherche}}</span>
+        </dd>
+        <dt><span>Enq Quantite</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqQuantite}}</span>
+        </dd>
+        <dt><span>Enq Question</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqQuestion}}</span>
+        </dd>
+        <dt><span>Enq Reponse</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqReponse}}</span>
+        </dd>
+        <dt><span>Enq Salaire</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqSalaire}}</span>
+        </dd>
+        <dt><span>Enq Salaire Devise</span></dt>
+        <dd>
+            <span>{{vm.enquete.enqSalaireDevise}}</span>
+        </dd>
+        <dt><span>Enquete</span></dt>
+        <dd>
+            <a ui-sref="etudiant-detail({id:vm.enquete.enquete.id})">{{vm.enquete.enquete.id}}</a>
+        </dd>
+        <dt><span>Stage</span></dt>
+        <dd>
+            <a ui-sref="stage-detail({id:vm.enquete.stage.id})">{{vm.enquete.stage.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="enquete-detail.edit({id:vm.enquete.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

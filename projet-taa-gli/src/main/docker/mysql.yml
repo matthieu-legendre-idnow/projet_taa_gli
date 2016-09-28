@@ -1,0 +1,14 @@
+version: '2'
+services:
+    projet_taa_gli-mysql:
+        container_name: projet_taa_gli-mysql
+        image: mysql:5.7.15
+        # volumes:
+        #     - ~/volumes/jhipster/projet_taa_gli/mysql/:/var/lib/mysql/
+        environment:
+            - MYSQL_USER=root
+            - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+            - MYSQL_DATABASE=projet_taa_gli
+        ports:
+            - 3306:3306
+        command: mysqld --lower_case_table_names=1 --skip-ssl

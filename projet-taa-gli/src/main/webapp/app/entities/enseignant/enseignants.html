@@ -1,0 +1,72 @@
+<div>
+    <h2>Enseignants</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="enseignant.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Enseignant
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Enseignant Id</span></th>
+                    <th><span>Enseignant Sesame</span></th>
+                    <th><span>Enseignant Sexe</span></th>
+                    <th><span>Enseignant Nom</span></th>
+                    <th><span>Enseignant Prenom</span></th>
+                    <th><span>Enseignant Adresse</span></th>
+                    <th><span>Enseignant Tel Pro</span></th>
+                    <th><span>Enseignant Actif</span></th>
+                    <th><span>Enseignant Maj</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enseignant in vm.enseignants track by enseignant.id">
+                    <td><a ui-sref="enseignant-detail({id:enseignant.id})">{{enseignant.id}}</a></td>
+                    <td>{{enseignant.enseignantId}}</td>
+                    <td>{{enseignant.enseignantSesame}}</td>
+                    <td>{{enseignant.enseignantSexe}}</td>
+                    <td>{{enseignant.enseignantNom}}</td>
+                    <td>{{enseignant.enseignantPrenom}}</td>
+                    <td>{{enseignant.enseignantAdresse}}</td>
+                    <td>{{enseignant.enseignantTelPro}}</td>
+                    <td>{{enseignant.enseignantActif}}</td>
+                    <td>{{enseignant.enseignantMaj | date:'medium'}}</td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="enseignant-detail({id:enseignant.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enseignant.edit({id:enseignant.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="enseignant.delete({id:enseignant.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

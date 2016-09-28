@@ -1,0 +1,166 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myEnqueteLabel">Create or edit a Enquete</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.enquete.id">
+            <label for="id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.enquete.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqId">Enq Id</label>
+            <input type="number" class="form-control" name="enqId" id="field_enqId"
+                    ng-model="vm.enquete.enqId"
+                    required />
+            <div ng-show="editForm.enqId.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enqId.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.enqId.$error.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_modeEnquete">Mode Enquete</label>
+            <input type="text" class="form-control" name="modeEnquete" id="field_modeEnquete"
+                    ng-model="vm.enquete.modeEnquete"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_dateEnquete">Date Enquete</label>
+                <div class="input-group">
+                    <input id="field_dateEnquete" type="text" class="form-control" name="dateEnquete" datetime-picker="{{dateformat}}" ng-model="vm.enquete.dateEnquete" is-open="vm.datePickerOpenStatus.dateEnquete"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateEnquete')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateEnquete.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateEnquete.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateEnquete.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuNom">Etu Nom</label>
+            <input type="text" class="form-control" name="etuNom" id="field_etuNom"
+                    ng-model="vm.enquete.etuNom"
+                    required />
+            <div ng-show="editForm.etuNom.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.etuNom.$error.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuRue">Etu Rue</label>
+            <input type="text" class="form-control" name="etuRue" id="field_etuRue"
+                    ng-model="vm.enquete.etuRue"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuVille">Etu Ville</label>
+            <input type="text" class="form-control" name="etuVille" id="field_etuVille"
+                    ng-model="vm.enquete.etuVille"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_etuCodeDep">Etu Code Dep</label>
+            <input type="text" class="form-control" name="etuCodeDep" id="field_etuCodeDep"
+                    ng-model="vm.enquete.etuCodeDep"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqDateDebut">Enq Date Debut</label>
+                <div class="input-group">
+                    <input id="field_enqDateDebut" type="text" class="form-control" name="enqDateDebut" datetime-picker="{{dateformat}}" ng-model="vm.enquete.enqDateDebut" is-open="vm.datePickerOpenStatus.enqDateDebut"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('enqDateDebut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.enqDateDebut.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.enqDateDebut.$error.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.enqDateDebut.$error.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqDureeRecherche">Enq Duree Recherche</label>
+            <input type="text" class="form-control" name="enqDureeRecherche" id="field_enqDureeRecherche"
+                    ng-model="vm.enquete.enqDureeRecherche"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqQuantite">Enq Quantite</label>
+            <input type="number" class="form-control" name="enqQuantite" id="field_enqQuantite"
+                    ng-model="vm.enquete.enqQuantite"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqQuestion">Enq Question</label>
+            <input type="text" class="form-control" name="enqQuestion" id="field_enqQuestion"
+                    ng-model="vm.enquete.enqQuestion"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqReponse">Enq Reponse</label>
+            <input type="text" class="form-control" name="enqReponse" id="field_enqReponse"
+                    ng-model="vm.enquete.enqReponse"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqSalaire">Enq Salaire</label>
+            <input type="number" class="form-control" name="enqSalaire" id="field_enqSalaire"
+                    ng-model="vm.enquete.enqSalaire"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" for="field_enqSalaireDevise">Enq Salaire Devise</label>
+            <input type="text" class="form-control" name="enqSalaireDevise" id="field_enqSalaireDevise"
+                    ng-model="vm.enquete.enqSalaireDevise"
+                     />
+        </div>
+
+        <div class="form-group">
+            <label for="field_enquete">Enquete</label>
+            <select class="form-control" id="field_enquete" name="enquete" ng-model="vm.enquete.enquete" ng-options="etudiant as etudiant.id for etudiant in vm.enquetes | orderBy:'id' track by etudiant.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="field_stage">Stage</label>
+            <select class="form-control" id="field_stage" name="stage" ng-model="vm.enquete.stage" ng-options="stage as stage.id for stage in vm.stages | orderBy:'id' track by stage.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span>Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span>Save</span>
+        </button>
+    </div>
+</form>

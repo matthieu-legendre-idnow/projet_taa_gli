@@ -1,0 +1,103 @@
+
+<div>
+    <h2><span>Stage</span> {{vm.stage.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span>Date Debut</span></dt>
+        <dd>
+            <span>{{vm.stage.dateDebut | date:'medium'}}</span>
+        </dd>
+        <dt><span>P Ident</span></dt>
+        <dd>
+            <span>{{vm.stage.pIdent}}</span>
+        </dd>
+        <dt><span>P Ident Convention</span></dt>
+        <dd>
+            <span>{{vm.stage.pIdentConvention}}</span>
+        </dd>
+        <dt><span>Etu Ident</span></dt>
+        <dd>
+            <span>{{vm.stage.etuIdent}}</span>
+        </dd>
+        <dt><span>Enseign Id</span></dt>
+        <dd>
+            <span>{{vm.stage.enseignId}}</span>
+        </dd>
+        <dt><span>Enc Id</span></dt>
+        <dd>
+            <span>{{vm.stage.encId}}</span>
+        </dd>
+        <dt><span>Nom Enc</span></dt>
+        <dd>
+            <span>{{vm.stage.nomEnc}}</span>
+        </dd>
+        <dt><span>Sujet</span></dt>
+        <dd>
+            <span>{{vm.stage.sujet}}</span>
+        </dd>
+        <dt><span>Lang</span></dt>
+        <dd>
+            <span>{{vm.stage.lang}}</span>
+        </dd>
+        <dt><span>Motscles</span></dt>
+        <dd>
+            <span>{{vm.stage.motscles}}</span>
+        </dd>
+        <dt><span>Jours Travaille</span></dt>
+        <dd>
+            <span>{{vm.stage.joursTravaille}}</span>
+        </dd>
+        <dt><span>Salaire</span></dt>
+        <dd>
+            <span>{{vm.stage.salaire}}</span>
+        </dd>
+        <dt><span>Fin Conv</span></dt>
+        <dd>
+            <span>{{vm.stage.finConv | date:'medium'}}</span>
+        </dd>
+        <dt><span>Fin Stage</span></dt>
+        <dd>
+            <span>{{vm.stage.finStage | date:'medium'}}</span>
+        </dd>
+        <dt><span>Soutenance</span></dt>
+        <dd>
+            <span>{{vm.stage.soutenance | date:'medium'}}</span>
+        </dd>
+        <dt><span>Rapport</span></dt>
+        <dd>
+            <span>{{vm.stage.rapport | date:'medium'}}</span>
+        </dd>
+        <dt><span>Referent</span></dt>
+        <dd>
+            <a ui-sref="enseignant-detail({id:vm.stage.referent.id})">{{vm.stage.referent.id}}</a>
+        </dd>
+        <dt><span>Contact 1</span></dt>
+        <dd>
+            <a ui-sref="contact-detail({id:vm.stage.contact1.id})">{{vm.stage.contact1.id}}</a>
+        </dd>
+        <dt><span>Contact 2</span></dt>
+        <dd>
+            <a ui-sref="contact-detail({id:vm.stage.contact2.id})">{{vm.stage.contact2.id}}</a>
+        </dd>
+        <dt><span>Etudiant</span></dt>
+        <dd>
+            <a ui-sref="etudiant-detail({id:vm.stage.etudiant.id})">{{vm.stage.etudiant.id}}</a>
+        </dd>
+        <dt><span>Entreprise</span></dt>
+        <dd>
+            <a ui-sref="partenaire-detail({id:vm.stage.entreprise.id})">{{vm.stage.entreprise.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span> Back</span>
+    </button>
+
+    <button type="button" ui-sref="stage-detail.edit({id:vm.stage.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm"> Edit</span>
+    </button>
+</div>

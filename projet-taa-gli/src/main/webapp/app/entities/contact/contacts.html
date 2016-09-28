@@ -1,0 +1,72 @@
+<div>
+    <h2>Contacts</h2>
+    <jhi-alert></jhi-alert>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xs-4 no-padding-left">
+                <button class="btn btn-primary" ui-sref="contact.new" >
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <span >
+                        Create new Contact
+                    </span>
+                </button>
+            </div>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span>ID</span></th>
+                    <th><span>Contact Id</span></th>
+                    <th><span>Contact Nom</span></th>
+                    <th><span>Contact Role</span></th>
+                    <th><span>Contact Sexe</span></th>
+                    <th><span>Contact Tel</span></th>
+                    <th><span>Contact Mail</span></th>
+                    <th><span>Contact Date Maj</span></th>
+                    <th><span>Contact</span></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="contact in vm.contacts track by contact.id">
+                    <td><a ui-sref="contact-detail({id:contact.id})">{{contact.id}}</a></td>
+                    <td>{{contact.contactId}}</td>
+                    <td>{{contact.contactNom}}</td>
+                    <td>{{contact.contactRole}}</td>
+                    <td>{{contact.contactSexe}}</td>
+                    <td>{{contact.contactTel}}</td>
+                    <td>{{contact.contactMail}}</td>
+                    <td>{{contact.contactDateMaj | date:'medium'}}</td>
+                    <td>
+                        <a ui-sref="partenaire-detail({id:contact.contact.id})">{{contact.contact.id}}</a>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group flex-btn-group-container">
+                            <button type="submit"
+                                    ui-sref="contact-detail({id:contact.id})"
+                                    class="btn btn-info btn-sm">
+                                <span class="glyphicon glyphicon-eye-open"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contact.edit({id:contact.id})"
+                                    class="btn btn-primary btn-sm">
+                                <span class="glyphicon glyphicon-pencil"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                            <button type="submit"
+                                    ui-sref="contact.delete({id:contact.id})"
+                                    class="btn btn-danger btn-sm">
+                                <span class="glyphicon glyphicon-remove-circle"></span>
+                                <span class="hidden-xs hidden-sm"></span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
